@@ -1,210 +1,625 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yaswanth Kumar | Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaswanth Kumar | ServiceNow Developer & ECE Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f172a;      /* Dark Navy */
+            --secondary: #3b82f6;    /* Bright Blue */
+            --accent: #f59e0b;       /* Amber for Hardware tags */
+            --soft-accent: #10b981;  /* Green for Software tags */
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+        }
 
-    body {
-      background: #f4f6f8;
-      color: #333;
-      line-height: 1.6;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            scroll-behavior: smooth;
+        }
 
-    header {
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
 
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-    }
+        /* --- Header & Nav --- */
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
 
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
+        .profile-container h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
 
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+        .profile-container h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
 
-    h2 {
-      color: #1e3c72;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #ddd;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
 
-    .card {
-      background: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
+        .btn-link {
+            color: white;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-    /* Certification specific style */
-    .cert-tag {
-        display: inline-block;
-        background: #e3f2fd;
-        border: 1px solid #2196f3;
-        color: #0d47a1;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 0.85rem;
-        font-weight: bold;
-        margin-right: 10px;
-        margin-bottom: 5px;
-    }
+        .btn-link:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+            transform: translateY(-2px);
+        }
 
-    ul {
-      list-style: none;
-    }
+        /* --- Global Section Styles --- */
+        section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
 
-    ul li {
-      padding: 8px 0;
-      border-bottom: 1px solid #f0f0f0;
-    }
-    
-    ul li:last-child {
-        border-bottom: none;
-    }
+        section:last-child {
+            border-bottom: none;
+        }
 
-    .skills span {
-      display: inline-block;
-      background: #e0e7ff;
-      color: #1e3c72;
-      padding: 6px 12px;
-      margin: 6px;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
-    
-    .hw-tag { color: #d35400; font-weight: bold; font-size: 0.8rem; margin-right: 5px; }
-    .sw-tag { color: #27ae60; font-weight: bold; font-size: 0.8rem; margin-right: 5px; }
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--secondary);
+            padding-left: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #1e3c72;
-      color: white;
-      margin-top: 40px;
-    }
+        /* --- About Me --- */
+        .about-text {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-size: 1.05rem;
+        }
 
-    a {
-      color: #2a5298;
-      text-decoration: none;
-      font-weight: 500;
-    }
+        /* --- Education --- */
+        .edu-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--secondary);
+        }
 
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+        .cgpa-badge {
+            background: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* --- Experience (Split Layout) --- */
+        .exp-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media(min-width: 768px) {
+            .exp-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .exp-column h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            text-align: center;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .exp-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exp-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+        }
+
+        .exp-soft::before { background: var(--soft-accent); }
+        .exp-hard::before { background: var(--accent); }
+
+        .role-title { font-weight: 700; display: block; }
+        .company-name { color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.5rem; display: block; }
+
+        /* --- Projects --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+            border: 1px solid #f1f5f9;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .b-soft { background: #dcfce7; color: #166534; }
+        .b-hard { background: #fef3c7; color: #b45309; }
+
+        .tech-stack {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .project-links {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .p-link {
+            font-size: 0.85rem;
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* --- Skills --- */
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-tags span {
+            display: inline-block;
+            background: #e2e8f0;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin: 0 5px 5px 0;
+            color: #334155;
+        }
+
+        /* --- Certifications --- */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .cert-icon { font-size: 2rem; color: var(--secondary); margin-bottom: 10px; }
+        
+        .cert-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 15px;
+            background: var(--primary);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        /* --- Achievements --- */
+        .achieve-list li {
+            margin-bottom: 1rem;
+            list-style: none;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .achieve-list li::before {
+            content: '🏆';
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--primary);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <h1>Yaswanth Kumar</h1>
-    <p>ServiceNow Certified Developer | ECE Student | Embedded Systems Enthusiast</p>
-  </header>
+    <header>
+        <div class="profile-container">
+            <h1>GODINA GANGA YASWANTH KUMAR</h1>
+            <h2>ServiceNow Certified Developer | Electronics & Communication Engineer</h2>
+            
+            <div class="contact-links">
+                <a href="mailto:yaswanth.kumar.godina@gmail.com" class="btn-link"><i class="fas fa-envelope"></i> Email Me</a>
+                <a href="https://www.linkedin.com/in/godina-ganga-yaswanth-kumar-0a0310287/" target="_blank" class="btn-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/YaswanthKumar2005" target="_blank" class="btn-link"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://www.hackerrank.com/profile/yaswanth_kumar_1" target="_blank" class="btn-link"><i class="fab fa-hackerrank"></i> HackerRank</a>
+                
+                <a href="https://drive.google.com/file/d/1eK82ZIaj2qqs75tcds3SJzi6aenSXqZF/view?usp=sharing" target="_blank" class="btn-link" style="background-color: var(--soft-accent); border-color: var(--soft-accent); font-weight: bold;">
+                    <i class="fas fa-file-download"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </header>
 
-  <section>
-    <h2>About Me</h2>
-    <div class="card">
-      <p>
-        I am a final-year B.Tech student at <strong>Mohan Babu University</strong> (Class of 2026) with a <strong>9.8 CGPA</strong>. 
+    <section id="about">
+        <div class="section-title"><i class="fas fa-user"></i> About Me</div>
+        <div class="about-text">
+            <p>
+                I am a final-year <strong>Electronics and Communication Engineering</strong> student at Mohan Babu University, consistently maintaining a <strong>9.8 CGPA</strong>. 
+                <br><br>
+                My technical expertise lies in bridging the gap between <strong>Hardware Systems</strong> (Embedded/IoT) and <strong>Enterprise Software</strong> (ServiceNow). While I have a strong foundation in core electronics, I have pivoted towards software development, earning certifications as a <strong>ServiceNow Application Developer (CAD)</strong> and <strong>System Administrator (CSA)</strong>.
+                <br><br>
+                I describe myself as an "ambivert"—I possess the focus and discipline required for deep technical work, yet I thrive in collaborative environments, leading student clubs and hackathons. I am currently seeking a role where I can leverage my hybrid skills in Python, ServiceNow, and Embedded Systems to build impactful solutions.
+            </p>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="section-title"><i class="fas fa-graduation-cap"></i> Education</div>
+        
+        <div class="edu-card">
+            <div>
+                <h3>Bachelor of Technology (ECE)</h3>
+                <span class="company-name">Mohan Babu University, Tirupati</span>
+                <small>2022 – 2026 (Expected)</small>
+            </div>
+            <div class="cgpa-badge">CGPA: 9.8</div>
+        </div>
+
+        <div class="edu-card">
+            <div>
+                <h3>Secondary & Senior Secondary</h3>
+                <span class="company-name">Jawahar Navodaya Vidyalaya</span>
+                <small>2014 – 2022</small>
+            </div>
+            <div class="cgpa-badge">93.6%</div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-title"><i class="fas fa-briefcase"></i> Work Experience</div>
+        
+        <div class="exp-container">
+            <div class="exp-column">
+                <h3 style="color: var(--soft-accent);"><i class="fas fa-code"></i> Software & ServiceNow</h3>
+                <div class="exp-card exp-soft">
+                    <span class="role-title">Trainee</span>
+                    <span class="company-name">RiseUp with ServiceNow (Remote) | Jun 2025 – Sep 2025</span>
+                    <ul>
+                        <li>Developed foundational understanding of ServiceNow ITSM and workflow automation.</li>
+                        <li>Configured digital workflows via hands-on lab exercises.</li>
+                        <li>Mastered Flow Designer and Service Portal concepts.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-column">
+                <h3 style="color: var(--accent);"><i class="fas fa-microchip"></i> Embedded Systems</h3>
+                <div class="exp-card exp-hard">
+                    <span class="role-title">Embedded Systems Intern</span>
+                    <span class="company-name">Teachnook</span>
+                    <ul>
+                        <li>Worked on microcontroller programming using C++.</li>
+                        <li>Gained practical experience interfacing sensors with Arduino environments.</li>
+                        <li>Built prototypes for basic automation systems.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-title"><i class="fas fa-laptop-code"></i> Projects</div>
+
+        <h3 style="margin-bottom: 20px; color: var(--text-light);">🔹 Featured Software Solutions</h3>
+        <div class="project-grid">
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Student Project Verification</h4>
+                    <span class="badge b-soft">ServiceNow</span>
+                </div>
+                <p>Designed a centralized portal using ServiceNow Studio & ITSM for students to submit project requests, automating the manager approval workflow.</p>
+                <div class="tech-stack"><strong>Tech:</strong> ServiceNow, Flow Designer, ITSM</div>
+                <div class="project-links">
+                    <a href="https://drive.google.com/file/d/1RdraZPmAmdB1uiAwQlFFJzKef98baNy6/view" target="_blank" class="p-link"><i class="fas fa-file-powerpoint"></i> View PPT</a>
+                    <a href="https://docs.google.com/document/d/1ACg-tXxDi8OnPqfVKHA1Tv1pA2S-UYoX/edit?usp=sharing&ouid=107008058896447783823&rtpof=true&sd=true" target="_blank" class="p-link"><i class="fas fa-file-alt"></i> View Doc</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Rank-Based College Predictor</h4>
+                    <span class="badge b-soft">Python</span>
+                </div>
+                <p>A web app that analyzes cutoff data to predict eligible colleges based on student rank and category.</p>
+                <div class="tech-stack"><strong>Tech:</strong> Python, Pandas, Streamlit</div>
+                <div class="project-links">
+                    <a href="https://github.com/YaswanthKumar2005/college-predictor-app" target="_blank" class="p-link"><i class="fab fa-github"></i> View Repo</a>
+                    <a href="https://eamcet-2025-college-predictor.streamlit.app/" target="_blank" class="p-link"><i class="fas fa-external-link-alt"></i> Try Live App</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Image Edge Detection</h4>
+                    <span class="badge b-soft">DSP</span>
+                </div>
+                <p>Applied Fast Fourier Transform (FFT) in frequency domain processing to detect edges in digital images.</p>
+                <div class="tech-stack"><strong>Tech:</strong> MATLAB, Python</div>
+                <div class="project-links">
+                    <a href="https://docs.google.com/document/d/1LdTvOPIiUMpaqXdG_4bVfamuB36sxVkA/edit?usp=sharing&ouid=107008058896447783823&rtpof=true&sd=true" target="_blank" class="p-link"><i class="fas fa-file-alt"></i> View Documentation</a>
+                </div>
+            </div>
+        </div>
+
         <br><br>
-        I have a unique hybrid profile: I am an Electronics and Communication Engineer with a strong passion for Software Development. I am <strong>ServiceNow Certified (CAD & CSA)</strong> and skilled in Python, while retaining deep knowledge of Embedded Systems and IoT.
-      </p>
-    </div>
-  </section>
-  
-  <section>
-    <h2>Certifications</h2>
-    <div class="card">
-        <div>
-            <span class="cert-tag">ServiceNow CAD</span> <strong>Certified Application Developer</strong>
+
+        <h3 style="margin-bottom: 20px; color: var(--text-light);">🔸 Hardware Innovations</h3>
+        <p style="margin-bottom: 15px; font-size: 0.9rem; color: #666;">
+            All hardware source codes and documentation are available in my <a href="https://github.com/sure-trust/GODINA-GANGA-YASWANTH-KUMAR-g15-es-and-iot" target="_blank" style="color: var(--accent); font-weight: bold;">Sure Trust Repository</a>.
+        </p>
+
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Smart Home Automation</h4>
+                    <span class="badge b-hard">IoT</span>
+                </div>
+                <p>Comprehensive system controlling lights and password-protected door locks using motion sensors.</p>
+                <div class="tech-stack"><strong>Tech:</strong> Arduino, C, PIR Sensors</div>
+                <div class="project-links">
+                    <a href="https://github.com/sure-trust/GODINA-GANGA-YASWANTH-KUMAR-g15-es-and-iot" target="_blank" class="p-link" style="color: var(--accent);"><i class="fab fa-github"></i> View Project Files</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Smart Flushing System</h4>
+                    <span class="badge b-hard">Innovation</span>
+                </div>
+                <p>Replaced traditional IR triggers with <strong>pH sensors</strong>. Flushes only when water acidity changes, preventing water wastage.</p>
+                <div class="tech-stack"><strong>Tech:</strong> Embedded C, pH Sensors</div>
+                <div class="project-links">
+                    <a href="https://github.com/sure-trust/GODINA-GANGA-YASWANTH-KUMAR-g15-es-and-iot" target="_blank" class="p-link" style="color: var(--accent);"><i class="fab fa-github"></i> View Project Files</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h4>Traffic & Toll Integration</h4>
+                    <span class="badge b-hard">Embedded</span>
+                </div>
+                <p>Unified two modules: automated toll collection to reduce congestion and dynamic traffic signals based on vehicle density.</p>
+                <div class="tech-stack"><strong>Tech:</strong> IR Sensors, Servo Motors</div>
+                <div class="project-links">
+                    <a href="https://github.com/sure-trust/GODINA-GANGA-YASWANTH-KUMAR-g15-es-and-iot" target="_blank" class="p-link" style="color: var(--accent);"><i class="fab fa-github"></i> View Project Files</a>
+                </div>
+            </div>
+            
+             <div class="project-card">
+                <div class="project-header">
+                    <h4>Smart Irrigation</h4>
+                    <span class="badge b-hard">AgriTech</span>
+                </div>
+                <p>Precision farming solution using soil moisture and temperature sensors to automate water delivery.</p>
+                <div class="tech-stack"><strong>Tech:</strong> Moisture Sensors, Arduino</div>
+                <div class="project-links">
+                    <a href="https://github.com/sure-trust/GODINA-GANGA-YASWANTH-KUMAR-g15-es-and-iot" target="_blank" class="p-link" style="color: var(--accent);"><i class="fab fa-github"></i> View Project Files</a>
+                </div>
+            </div>
         </div>
-        <div style="margin-top: 10px;">
-            <span class="cert-tag">ServiceNow CSA</span> <strong>Certified System Administrator</strong>
+    </section>
+    <section id="certifications">
+        <div class="section-title"><i class="fas fa-certificate"></i> Certifications</div>
+        <div class="cert-grid">
+            <div class="cert-item">
+                <div class="cert-icon"><i class="fas fa-award"></i></div>
+                <h4>ServiceNow CAD</h4>
+                <p>Certified Application Developer</p>
+                <a href="https://drive.google.com/file/d/1ayKS23ZYmczxQ4pf_fWrIGIjzxZU8fmN/view?usp=drivesdk" target="_blank" class="cert-btn">View Certificate</a>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-icon"><i class="fas fa-file-contract"></i></div>
+                <h4>ServiceNow CSA</h4>
+                <p>Certified System Administrator</p>
+                <a href="https://drive.google.com/file/d/1vpwg02tF1X84FZqSeCOUSbYYD9AYGJP_/view?usp=drive_link" target="_blank" class="cert-btn">View Certificate</a>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-icon"><i class="fab fa-python"></i></div>
+                <h4>Python Programming</h4>
+                <p>Coursera</p>
+                <a href="https://www.coursera.org/account/accomplishments/verify/DSTQAZTFR8E5" target="_blank" class="cert-btn">View Certificate</a>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-icon"><i class="fas fa-laptop-code"></i></div>
+                <h4>Software Engineering</h4>
+                <p>Coursera</p>
+                <a href="https://coursera.org/share/d00fbd916bfb1189dada40a444247030" target="_blank" class="cert-btn">View Certificate</a>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-icon"><i class="fas fa-database"></i></div>
+                <h4>SQL (Basic)</h4>
+                <p>HackerRank</p>
+                <a href="https://www.hackerrank.com/certificates/d03a968c6e26" target="_blank" class="cert-btn">View Certificate</a>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-icon"><i class="fab fa-html5"></i></div>
+                <h4>HTML, CSS, & JS</h4>
+                <p>Coursera</p>
+                <a href="https://www.coursera.org/account/accomplishments/verify/9K7TRBSF8Z8X" target="_blank" class="cert-btn">View Certificate</a>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-icon"><i class="fab fa-github"></i></div>
+                <h4>Git & GitHub</h4>
+                <p>Coursera</p>
+                <a href="https://www.coursera.org/account/accomplishments/verify/OGVQ4R2T3HMI" target="_blank" class="cert-btn">View Certificate</a>
+            </div>
+
+            <div class="cert-item">
+                <div class="cert-icon"><i class="fas fa-language"></i></div>
+                <h4>MePro English Level 10</h4>
+                <p>Pearson (Expert)</p>
+                <a href="https://www.credly.com/go/tZNuEa8S" target="_blank" class="cert-btn">View Certificate</a>
+            </div>
         </div>
-        <div style="margin-top: 10px;">
-            <span class="cert-tag">Graduation</span> <strong>RiseUp with ServiceNow</strong> (Sep 2025)
+    </section>
+
+<section id="skills">
+        <div class="section-title"><i class="fas fa-tools"></i> Technical Skills</div>
+        <div class="skills-wrapper">
+            
+            <div class="skill-category">
+                <h4><i class="fas fa-cloud" style="color: var(--soft-accent);"></i> ServiceNow & Cloud</h4>
+                <div class="skill-tags">
+                    <span>Cloud Platform (PaaS/SaaS)</span>
+                    <span>Application Development (CAD)</span>
+                    <span>System Administration (CSA)</span>
+                    <span>ITSM & Workflow Automation</span>
+                    <span>Flow Designer & Studio</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h4><i class="fas fa-code" style="color: var(--secondary);"></i> Software & Web</h4>
+                <div class="skill-tags">
+                    <span>Python (Pandas, Streamlit)</span>
+                    <span>C Programming</span>
+                    <span>SQL / MySQL</span>
+                    <span>HTML5, CSS3, JavaScript</span>
+                    <span>Generative AI Fundamentals</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h4><i class="fas fa-microchip" style="color: var(--accent);"></i> Electronics & Hardware</h4>
+                <div class="skill-tags">
+                    <span>Embedded Systems</span>
+                    <span>Signal & Image Processing</span>
+                    <span>MATLAB & PSPICE</span>
+                    
+                    <span style="opacity: 0.9; font-size: 0.85rem;">Digital Electronics & VLSI</span>
+                    <span style="opacity: 0.9; font-size: 0.85rem;">Analog & Digital Communications</span>
+                    <span style="opacity: 0.9; font-size: 0.85rem;">Satellite & Mobile Communications</span>
+                </div>
+            </div>
+
         </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Skills</h2>
-    <div class="card skills">
-      <span>C</span>
-      <span>Python</span>
-      <span>Java</span>
-      <span>SQL / MySQL</span>
-      
-      <span>ServiceNow Development</span>
-      <span>Pandas & Streamlit</span>
-      <span>Generative AI</span>
-      
-      <span>Embedded C</span>
-      <span>Arduino</span>
-      <span>Verilog</span>
-    </div>
-  </section>
+    <section id="achievements">
+        <div class="section-title"><i class="fas fa-trophy"></i> Achievements & Leadership</div>
+        <ul class="achieve-list">
+            <li>
+                <strong>Coordinator, IETE Student Forum (ISF):</strong> Spearheaded the planning and execution of multiple technical events, including university-level hackathons and circuit design contests.
+            </li>
+            <li>
+                <strong>Organizer, Art and Literary Club:</strong> Fostered a creative campus environment by organizing engaging competitions such as Word Games, vocabulary challenges, and crossword puzzles.
+            </li>
+            <li>
+                <strong>Active Participant:</strong> Attended AI Skills Summit & Embedded Systems Workshops to stay updated with emerging tech trends.
+            </li>
+        </ul>
+    </section>
 
-  <section>
-    <h2>Projects</h2>
-    <div class="card">
-      <ul>
-        <li><span class="sw-tag">[SOFTWARE]</span> <strong>College Predictor Web App:</strong> A Python/Streamlit app to predict eligible colleges for students.</li>
-        <li><span class="hw-tag">[HARDWARE]</span> <strong>Automatic Fan Speed Control:</strong> Temperature-sensor based cooling system.</li>
-        <li><span class="hw-tag">[HARDWARE]</span> <strong>Smart Irrigation System:</strong> IoT solution for precision farming.</li>
-        <li><span class="hw-tag">[HARDWARE]</span> <strong>Traffic Signal & Toll Gate System:</strong> Automated control logic systems.</li>
-        <li><span class="sw-tag">[SOFTWARE]</span> <strong>Database Analysis:</strong> Complex SQL queries utilizing Joins and Subqueries.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>Experience & Activities</h2>
-    <div class="card">
-      <ul>
-        <li><strong>Embedded Systems Intern</strong> – Teachnook</li>
-        <li><strong>Embedded Systems & IoT Intern</strong> – Sure Trust</li>
-        <li><strong>Trainee</strong> – RiseUp with ServiceNow (Hyderabad)</li>
-        <li><strong>Coordinator</strong> – IETE Student Forum (ISF)</li>
-        <li><strong>Coordinator</strong> – Art & Literary Club</li>
-      </ul>
-    </div>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <div class="card">
-      <p>Email: <a href="mailto:yaswanth@example.com">yaswanth@example.com</a></p>
-      <p>LinkedIn: <a href="#">linkedin.com/in/yaswanth</a></p>
-      <p>GitHub: <a href="#">github.com/yaswanth</a></p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Yaswanth Kumar | Personal Website</p>
-  </footer>
+    <footer>
+        <p>&copy; 2025 Godina Ganga Yaswanth Kumar. All Rights Reserved.</p>
+        <p style="margin-top: 10px;">
+            <a href="mailto:yaswanth.kumar.godina@gmail.com" style="color: #cbd5e1;">Contact Me</a>
+        </p>
+    </footer>
 
 </body>
 </html>
